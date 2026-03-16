@@ -1,10 +1,16 @@
-let username;
-let dni; 
+class Alumno {
+    
+    username;
+    dni;
+    constructor (username, dni) {
+        this.username = username;
+        this.dni = dni;
+    }
 
-function usuario(username, dni) {
-    username = username;
-    dni = dni;
-    return { username, dni }
+    // usuario() {
+    // return { username: this.username, dni: this.dni }
+    // }
 }
 
-export {usuario};
+
+export {Alumno};
