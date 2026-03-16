@@ -19,9 +19,11 @@ fs.writeFileSync('hola.txt', 'hola me llamo cata');
 const contenido = fs.readFileSync('hola.txt', 'utf-8'); 
 console.log(contenido); 
 
-url = "htthsfdjkfshkx.htm?curso=2022&mes=mayo&dia=10";
-let objeto = parsearUrl(url);
-console.log(objeto);
+import { URL } from 'url';
+
+let url = "http://www.ort.edu.ar:8080/alumnos/index.htm?curso=2022&mes=mayo";
+// let objeto = parsearUrl(url); 
+// console.log(objeto);
 
 function parsearUrl(url) {
     let urlObj = new URL(url);
@@ -37,20 +39,24 @@ function parsearUrl(url) {
     };
 }
 
+verificar(url);
+
 function verificar(url) {
     try {
         new URL(url);
-        return true;
+        return console.log("La URL es válida.");
     } catch (error) {
-        return false;
+       console.log("❌ URL errónea:" + error.message);
     }
 }
 
-if (verificar(url)) {
-    console.log("La URL es válida.");
-} else {
-    console.log("La URL no es válida.");
-}
+import moneda from "country-to-currency";
+
+console.log(moneda.AR);
+console.log(moneda.US);
+
+
+
 
 
 
