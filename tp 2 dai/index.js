@@ -19,7 +19,8 @@ fs.writeFileSync('hola.txt', 'hola me llamo cata');
 const contenido = fs.readFileSync('hola.txt', 'utf-8'); 
 console.log(contenido); 
 
-let objeto = parsearUrl("http://www.ort.edu.ar:8080/alumnos/index.htm?curso=2022&mes=mayo&dia=10");
+url = "htthsfdjkfshkx.htm?curso=2022&mes=mayo&dia=10";
+let objeto = parsearUrl(url);
 console.log(objeto);
 
 function parsearUrl(url) {
@@ -28,11 +29,27 @@ function parsearUrl(url) {
     const host = urlObj.hostname;
     const puerto = urlObj.port;
     const path = urlObj.pathname;
+
     return {
         protocolo,
         host,
         path
     };
+}
+
+function verificar(url) {
+    try {
+        new URL(url);
+        return true;
+    } catch (error) {
+        return false;
+    }
+}
+
+if (verificar(url)) {
+    console.log("La URL es válida.");
+} else {
+    console.log("La URL no es válida.");
 }
 
 
