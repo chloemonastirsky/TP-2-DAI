@@ -12,3 +12,11 @@ const alumno1 = new Alumno("chloe", 45903499);
 console.log(alumno1);
 const alumno2 = new Alumno("cata", 12345678);
 console.log(alumno2);
+
+import fs from "fs";
+
+fs.writeFileSync('hola.txt', 'hola me llamo cata');
+const contenido = fs.readFileSync('hola.txt', 'utf-8'); 
+console.log(contenido); 
+
+

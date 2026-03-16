@@ -7,9 +7,6 @@ class Alumno {
         this.dni = dni;
     }
 
-    // usuario() {
-    // return { username: this.username, dni: this.dni }
-    // }
 }
 
 
