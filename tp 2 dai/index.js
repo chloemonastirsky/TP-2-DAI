@@ -19,4 +19,21 @@ fs.writeFileSync('hola.txt', 'hola me llamo cata');
 const contenido = fs.readFileSync('hola.txt', 'utf-8'); 
 console.log(contenido); 
 
+let objeto = parsearUrl("http://www.ort.edu.ar:8080/alumnos/index.htm?curso=2022&mes=mayo&dia=10");
+console.log(objeto);
+
+function parsearUrl(url) {
+    let urlObj = new URL(url);
+    const protocolo = urlObj.protocol;
+    const host = urlObj.hostname;
+    const puerto = urlObj.port;
+    const path = urlObj.pathname;
+    return {
+        protocolo,
+        host,
+        path
+    };
+}
+
+
 
